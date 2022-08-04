@@ -53,7 +53,7 @@ for(let i = 0; i < arr.length; i++) {
 console.log(newArr);
 
 
-var arr = [1, 2, 3];
+let arr = [1, 2, 3];
 
 arr.map(function(val) {  
     return val * 2;
