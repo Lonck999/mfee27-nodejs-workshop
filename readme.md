@@ -1,11 +1,88 @@
-# 7/23 NodeJS 上課心得
+# NodeJS for MFEE 27
 
-## 感想
+## How to setup ESLint & Prettier
 
-很喜歡小賴老師的上課方式，上課緊湊扎實但又不失風趣能理解上課交的功能也能理解原由，但就是膀胱痛了點XD，下次一定會鼓起勇氣打斷老師的，也很感謝老師讓我們知道從事這行去上班團隊上會遇到甚麼狀況跟需要先瞭解的團隊規則。
-    
-## 許願
+### 需要安裝的 vscode 套件
 
-老實說自己對於JS蠻挫折的，挫折的點在於雖然會判斷式和函數等等的功能，但對於在網頁上能實際怎麼運用或用在哪裡沒有一個頭緒，希望老師能夠多講講實際運用的例子。
+- https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+- https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 
+```json
+{
+  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+}
+```
 
+### vscode 的設定
+
+settings.json
+
+僅供參考，注意:
+
+- 不要有重複出現的設定
+- tabSize 與是否使用單引號(singleQuote) 請自行判斷決定
+
+```json
+"editor.formatOnSave": true,
+"editor.tabSize": 2,
+"window.title": "${activeEditorLong}${separator}${rootName}",
+"window.zoomLevel": 1,
+"editor.codeActionsOnSave": {
+  // For ESLint and StyleLint
+  "source.fixAll": true
+},
+"prettier.singleQuote": true,
+//"prettier.configPath": ".prettierrc",
+"eslint.format.enable": true,
+"[javascript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"eslint.alwaysShowStatus": true
+```
+
+### 需要安裝的 npm 套件
+
+- 每個專案都要需要安裝一次
+- `prettier` 可以安裝在 global （這樣就不用每個專案都安裝）
+
+```bash
+npm i --save-dev eslint-config-prettier eslint-plugin-prettier prettier
+```
+
+```json
+"devDependencies": {
+  "eslint-config-prettier": "^8.3.0",
+  "eslint-plugin-prettier": "^4.0.0",
+  "prettier": "^2.5.1"
+}
+```
+
+### 專案中需要配置的設定檔
+
+.prettierrc
+
+```json
+{
+  "singleQuote": true,
+  "printWidth": 180,
+  "semi": true,
+  "tabWidth": 2
+}
+```
+
+.eslintrc.json
+
+```json
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "rules": {}
+}
+```

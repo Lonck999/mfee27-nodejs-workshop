@@ -1,3 +1,4 @@
+// 用 axios 去目標 API 抓資料
 // await 版本
 // 更好的參數設定
 // 1. npm i axios

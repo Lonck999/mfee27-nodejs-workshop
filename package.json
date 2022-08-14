@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-workshop",
+  "version": "1.0.0",
+  "description": "```javascript let a = 1; ```",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azole/mfee27-nodejs-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azole/mfee27-nodejs-workshop/issues"
+  },
+  "homepage": "https://github.com/azole/mfee27-nodejs-workshop#readme",
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1"
+  }
+}
